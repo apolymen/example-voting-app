@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/openjdk-8
+FROM openjdk:8-alpine
 
 RUN MAVEN_VERSION=3.3.3 \
  && cd /usr/share \

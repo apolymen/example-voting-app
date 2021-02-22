@@ -1,10 +1,8 @@
 FROM registry.access.redhat.com/ubi8/openjdk-8
 
-RUN sudo dnf install -y wget
-
 RUN MAVEN_VERSION=3.3.3 \
  && cd /usr/share \
- && wget http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz -O - | tar xzf - \
+ && curl http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar -xz \
  && mv /usr/share/apache-maven-$MAVEN_VERSION /usr/share/maven \
  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 

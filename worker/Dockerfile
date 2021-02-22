@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/ubi8/openjdk-8
 
-RUN dnf install -y wget
+RUN sudo dnf install -y wget
 
 RUN MAVEN_VERSION=3.3.3 \
  && cd /usr/share \

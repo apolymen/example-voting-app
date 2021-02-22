@@ -1,5 +1,7 @@
 FROM registry.access.redhat.com/ubi8/openjdk-8
 
+RUN yum install -y wget
+
 RUN MAVEN_VERSION=3.3.3 \
  && cd /usr/share \
  && wget http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz -O - | tar xzf - \
